@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SLAUGHTER GATE // SYSTEM_FAILURE</title>
-    <!-- Importation d'une police pixelisée -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!-- Couches d'effets visuels -->
     <div class="crt-overlay"></div>
     <div class="scanlines"></div>
     <div class="vignette"></div>
+    
+    <!-- Canvas pour la neige TV sur tout l'écran -->
+    <canvas id="tv-static"></canvas>
 
     <div class="container">
         <header>
@@ -31,52 +31,39 @@
             </div>
         </section>
 
-        <!-- Galerie d'images -->
         <section class="gallery-section">
             <h2>/// PREUVES_PHOTOGRAPHIQUES ///</h2>
             <div class="gallery-grid">
-
-                <!-- Image 1 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
                         <img src="Images/Niveau 1 2D.png" alt="Niveau 1 2D">
                     </div>
                 </div>
-
-                <!-- Image 2 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
                         <img src="Images/Niveau 2 2D.png" alt="Niveau 2 2D">
                     </div>
                 </div>
-
-                <!-- Image 3 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
                         <img src="Images/Niveau 3 2D.png" alt="Niveau 3 2D">
                     </div>
                 </div>
-
-                <!-- Image 4 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
                         <img src="Images/Niveau 1 3D.png" alt="Niveau 1 3D">
                     </div>
                 </div>
-
-                <!-- Image 5 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
                         <img src="Images/Niveau 2 3D.png" alt="Niveau 2 3D">
                     </div>
                 </div>
-
-                <!-- Image 6 -->
                 <div class="gallery-item">
                     <div class="no-badge">NO</div>
                     <div class="photo-frame">
@@ -86,34 +73,31 @@
             </div>
         </section>
 
-        <!-- Section Musique (Intégrée) -->
         <section class="music-section">
             <h2>/// AUDIO_LOGS ///</h2>
             <div class="music-list">
-                
                 <div class="music-item">
                     <span class="music-label">TRACK_01: Unhinged Betrayal</span>
                     <a href="https://open.spotify.com/intl-fr/track/5B84pqEDz2ssVbaGnT8EXu?si=ca5f5333cef64633" class="music-link" target="_blank">
                         [SPOTIFY] AKIRA YAMAOKA
                     </a>
                 </div>
-
                 <div class="music-item">
                     <span class="music-label">TRACK_02: Credit Ost</span>
                     <a href="https://youtu.be/_NKsT3YmgH0?si=d-i1Oi6sZ7x4uCpq" class="music-link" target="_blank">
                         [YOUTUBE] NO, I'M NOT A HUMAN
                     </a>
                 </div>
-
             </div>
         </section>
 
         <footer>
             <p>SLAUGHTER GATE PROJECT &copy; 2026</p>
             <p>Louca Cugnet Cointe - Jayden Jean - Paul-Ryan François</p>
-            <p>Site Créer par Louca Cugnet Cointe</p>
+            <p>Site Créer Par Louca Cugnet Cointe</p>
         </footer>
     </div>
 
+    <script src="javascript/script.js"></script>
 </body>
 </html>

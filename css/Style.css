@@ -1,4 +1,3 @@
-/* --- RESET & BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@
 body {
     background-color: #050505;
     color: #b0b0b0;
-    font-family: 'VT323', monospace; /* Police style terminal rétro */
+    font-family: 'VT323', monospace;
     overflow-x: hidden;
     height: 100vh;
     display: flex;
@@ -16,7 +15,6 @@ body {
     position: relative;
 }
 
-/* --- EFFETS CRT & GRAIN (Le style de l'image) --- */
 .crt-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -48,12 +46,22 @@ body {
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
     z-index: 998;
-    background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.8) 100%);
+    background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.9) 100%);
 }
 
-/* --- TYPOGRAPHIE --- */
+#tv-static {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+    pointer-events: none;
+    opacity: 0.15; 
+}
+
 h1 {
-    font-family: 'Press Start 2P', cursive; /* Police 8-bit */
+    font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     color: #e0e0e0;
     text-align: center;
@@ -72,7 +80,6 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* --- LAYOUT --- */
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -85,12 +92,11 @@ h1 {
     justify-content: center;
 }
 
-/* --- HERO SECTION --- */
 .hero {
     text-align: center;
     padding: 3rem 0;
     border-bottom: 2px solid #333;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     position: relative;
 }
 
@@ -111,7 +117,6 @@ h1 {
     text-shadow: 0 0 5px rgba(255,255,255,0.1);
 }
 
-/* --- BOUTON STYLE RETRO --- */
 .download-btn {
     display: inline-block;
     background: #000;
@@ -129,7 +134,7 @@ h1 {
 }
 
 .download-btn:hover {
-    background: #880000; /* Rouge sang */
+    background: #880000;
     color: #000;
     border-color: #ff0000;
     box-shadow: 6px 6px 0px #440000;
@@ -142,7 +147,11 @@ h1 {
     box-shadow: 2px 2px 0px #222;
 }
 
-/* --- GALERIE STYLE "PREUVES" --- */
+.gallery-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
 .gallery-section h2 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
@@ -153,13 +162,24 @@ h1 {
     text-transform: uppercase;
     border-bottom: 1px dashed #333;
     padding-bottom: 10px;
+    position: relative;
+    z-index: 5;
+}
+
+.gallery-section h2::before {
+    content: "";
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    width: 100px; height: 2px;
+    background: #333;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-bottom: 4rem; /* Espace avant la section musique */
+    margin-bottom: 4rem;
 }
 
 .gallery-item {
@@ -173,12 +193,12 @@ h1 {
     animation: fadeIn 1s forwards;
 }
 
-.gallery-item:nth-child(2) { animation-delay: 0.2s; }
-.gallery-item:nth-child(3) { animation-delay: 0.4s; }
-.gallery-item:nth-child(4) { animation-delay: 0.6s; }
-.gallery-item:nth-child(5) { animation-delay: 0.8s; }
-.gallery-item:nth-child(6) { animation-delay: 1.0s; }
-.gallery-item:nth-child(7) { animation-delay: 1.2s; }
+.gallery-item:nth-child(1) { animation-delay: 0.2s; }
+.gallery-item:nth-child(2) { animation-delay: 0.4s; }
+.gallery-item:nth-child(3) { animation-delay: 0.6s; }
+.gallery-item:nth-child(4) { animation-delay: 0.8s; }
+.gallery-item:nth-child(5) { animation-delay: 1.0s; }
+.gallery-item:nth-child(6) { animation-delay: 1.2s; }
 
 .gallery-item:hover {
     transform: scale(1.05);
@@ -190,7 +210,7 @@ h1 {
     position: relative;
     overflow: hidden;
     border: 1px solid #333;
-    filter: grayscale(100%) contrast(150%) brightness(70%) sepia(20%);
+    filter: grayscale(100%) contrast(150%) brightness(70%) sepia(20%) brightness(0.9);
     transition: filter 0.3s ease;
 }
 
@@ -205,7 +225,6 @@ h1 {
     opacity: 0.9;
 }
 
-/* Badge "NO" style */
 .no-badge {
     position: absolute;
     top: 10px;
@@ -220,7 +239,6 @@ h1 {
     opacity: 0.7;
 }
 
-/* --- SECTION MUSIQUE (NOUVEAU STYLE) --- */
 .music-section {
     background: rgba(10, 10, 10, 0.8);
     border: 1px solid #333;
@@ -278,7 +296,6 @@ h1 {
     transform: scale(1.05);
 }
 
-/* --- FOOTER --- */
 footer {
     text-align: center;
     margin-top: auto;
@@ -288,7 +305,6 @@ footer {
     border-top: 1px solid #111;
 }
 
-/* --- ANIMATIONS --- */
 @keyframes flicker {
     0% { opacity: 0.95; }
     5% { opacity: 0.9; }
@@ -319,10 +335,10 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     h1 { font-size: 1.5rem; line-height: 1.5; }
     .subtitle { font-size: 1rem; }
     .download-btn { padding: 1rem; font-size: 0.6rem; }
     .music-link { width: 100%; text-align: center; }
+    .gallery-grid { grid-template-columns: 1fr; }
 }
