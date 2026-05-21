@@ -1,1 +1,1 @@
-# SLAUGHTER-GATE
+# [SLAUGHTER-GATE](https://verrith.github.io/SLAUGHTER-GATE/)
